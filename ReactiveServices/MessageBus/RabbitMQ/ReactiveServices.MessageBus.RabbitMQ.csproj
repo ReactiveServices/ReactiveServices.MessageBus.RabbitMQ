@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{681EDEDC-C9DA-4D73-8294-ABD408CAED36}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReactiveServices.MessageBus.RabbitMQ</RootNamespace>
+    <AssemblyName>ReactiveServices.MessageBus.RabbitMQ</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <DontImportPostSharp>True</DontImportPostSharp>
+    <!--<DontImportPostSharp>True</DontImportPostSharp>-->
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NLog.4.0.1\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp, Version=4.1.21.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PostSharp.4.1.21\lib\net35-client\PostSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp.Patterns.Diagnostics, Version=4.1.21.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PostSharp.Patterns.Diagnostics.4.1.21\lib\net40\PostSharp.Patterns.Diagnostics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=3.5.4.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RabbitMQ.Client.3.5.4\lib\net40\RabbitMQ.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sprache, Version=2.0.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sprache.2.0.0.46\lib\portable-net4+netcore45+win8+wp8+sl5+MonoAndroid1+MonoTouch1\Sprache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionString\ConnectionStringGrammar.cs" />
+    <Compile Include="ConnectionString\IConnectionConfiguration.cs" />
+    <Compile Include="ConnectionString\IConnectionStringParser.cs" />
+    <Compile Include="InvalidResponseException.cs" />
+    <Compile Include="RabbitMQAuthorizedBuses.cs" />
+    <Compile Include="RabbitMQConsumer.cs" />
+    <Compile Include="RabbitMQBsonSerializer.cs" />
+    <Compile Include="RabbitMQJsonSerializer.cs" />
+    <Compile Include="RabbitMQChannel.cs" />
+    <Compile Include="RabbitMQMessageBus.cs" />
+    <Compile Include="RabbitMQSendingBus.cs" />
+    <Compile Include="RabbitMQResponseBus.cs" />
+    <Compile Include="RabbitMQRequestBus.cs" />
+    <Compile Include="RabbitMQPublishingBus.cs" />
+    <Compile Include="RabbitMQReceivingBus.cs" />
+    <Compile Include="RabbitMQSubscriptionBus.cs" />
+    <Compile Include="RabbitMQSubscription.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ReactiveServices.MessageBus.RabbitMQ.nuspec" />
+    <None Include="ReactiveServices.MessageBus.RabbitMQ.psproj" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Authorization\ReactiveServices.Authorization.csproj">
+      <Project>{7cd6309f-c689-4111-b58d-88f5ba9f3cc4}</Project>
+      <Name>ReactiveServices.Authorization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Configuration\ReactiveServices.Configuration.csproj">
+      <Project>{2a8ddafd-0b2b-4798-89b6-ee43afb380f7}</Project>
+      <Name>ReactiveServices.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Extensions\ReactiveServices.Extensions.csproj">
+      <Project>{0da6b5c5-085c-4ea7-b62f-b297b22d1a67}</Project>
+      <Name>ReactiveServices.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReactiveServices.MessageBus.csproj">
+      <Project>{e1759601-f341-419e-b978-7b753241c4d9}</Project>
+      <Name>ReactiveServices.MessageBus</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\packages\PostSharp.4.1.21\tools\PostSharp.targets" Condition="Exists('..\..\packages\PostSharp.4.1.21\tools\PostSharp.targets')" />
+  <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\..\packages\PostSharp.4.1.21\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\..\packages\PostSharp.4.1.21\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>
+  <!--<Import Project="..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets" Condition="Exists('..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets')" />-->
+  <!--<Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\..\packages\PostSharp.4.1.13\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>-->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
