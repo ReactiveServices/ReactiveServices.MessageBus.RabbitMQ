@@ -6,8 +6,8 @@
     <ProjectGuid>{91034DD7-C58F-420E-AC04-AC70793E675B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReactiveServices.MessageBus.Tests</RootNamespace>
-    <AssemblyName>ReactiveServices.MessageBus.Tests</AssemblyName>
+    <RootNamespace>ReactiveServices.MessageBus.RabbitMQ.Tests</RootNamespace>
+    <AssemblyName>ReactiveServices.MessageBus.RabbitMQ.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -70,8 +70,28 @@
       <HintPath>..\..\packages\PostSharp.Patterns.Diagnostics.4.1.21\lib\net40\PostSharp.Patterns.Diagnostics.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ReactiveServices.Authorization, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ReactiveServices.Authorization.0.3.4.0\lib\net451\ReactiveServices.Authorization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.Configuration, Version=0.2.5742.32135, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ReactiveServices.MessageBus.0.3.29\lib\net451\ReactiveServices.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.Extensions, Version=0.2.5742.32099, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ReactiveServices.MessageBus.0.3.29\lib\net451\ReactiveServices.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.MessageBus, Version=0.3.29.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ReactiveServices.MessageBus.0.3.29\lib\net451\ReactiveServices.MessageBus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Renci.SshNet, Version=2013.4.7.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SSH.NET.2013.4.7\lib\net40\Renci.SshNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=2.8.3.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.2.8.3\lib\net45\SimpleInjector.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -111,10 +131,7 @@
       <DependentUpon>StorageTypes.feature</DependentUpon>
     </Compile>
     <Compile Include="TestMessages.cs" />
-    <Compile Include="UnitTests\EnumerableTests.cs" />
-    <Compile Include="UnitTests\IdTests.cs" />
     <Compile Include="UnitTests\MessageBusTests.cs" />
-    <Compile Include="UnitTests\MessageTests.cs" />
     <Compile Include="MyId.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -159,25 +176,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Authorization\ReactiveServices.Authorization.csproj">
-      <Project>{7cd6309f-c689-4111-b58d-88f5ba9f3cc4}</Project>
-      <Name>ReactiveServices.Authorization</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Configuration\ReactiveServices.Configuration.csproj">
-      <Project>{2A8DDAFD-0B2B-4798-89B6-EE43AFB380F7}</Project>
-      <Name>ReactiveServices.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Extensions\ReactiveServices.Extensions.csproj">
-      <Project>{0da6b5c5-085c-4ea7-b62f-b297b22d1a67}</Project>
-      <Name>ReactiveServices.Extensions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InSingleProcessMemory\ReactiveServices.MessageBus.InSingleProcessMemory.csproj">
-      <Project>{f3014e5a-3cc8-4c5d-8be2-e28ab778f354}</Project>
-      <Name>ReactiveServices.MessageBus.InSingleProcessMemory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ReactiveServices.MessageBus.csproj">
-      <Project>{e1759601-f341-419e-b978-7b753241c4d9}</Project>
-      <Name>ReactiveServices.MessageBus</Name>
+    <ProjectReference Include="..\RabbitMQ\ReactiveServices.MessageBus.RabbitMQ.csproj">
+      <Project>{681ededc-c9da-4d73-8294-abd408caed36}</Project>
+      <Name>ReactiveServices.MessageBus.RabbitMQ</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,7 +7,7 @@ using System.Threading;
 using ReactiveServices.Extensions;
 using TechTalk.SpecFlow;
 
-namespace ReactiveServices.MessageBus.Tests.Specifications
+namespace ReactiveServices.MessageBus.RabbitMQ.Tests.Specifications
 {
     [Binding]
     [Log(AttributeExclude = true)]

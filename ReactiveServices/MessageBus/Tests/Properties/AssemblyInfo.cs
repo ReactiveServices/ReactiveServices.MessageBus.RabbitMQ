@@ -21,7 +21,7 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR TH
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("ReactiveServices.MessageBus.Tests")]
+[assembly: AssemblyTitle("ReactiveServices.MessageBus.RabbitMQ.Tests")]
 
 [assembly: Guid("4f2d4a44-3b77-45be-9086-26b0e795572f")]
 
@@ -31,6 +31,6 @@ using System.Runtime.InteropServices;
 
 [assembly: ComVisible(false)]
 
-[assembly: AssemblyVersion("0.2.*")]
-[assembly: AssemblyFileVersion("0.2.0.0")]
+[assembly: AssemblyVersion("0.3.*")]
+[assembly: AssemblyFileVersion("0.3.0.0")]
 

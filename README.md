@@ -4,15 +4,11 @@ Reactive Services is a framework that support the development of distributed app
 
 See [this link](http://reactiveservices.github.io) for an overview about the framework.
 
+[![Build status](https://ci.appveyor.com/api/projects/status/qrhql4k6gf726qep?svg=true)](https://ci.appveyor.com/project/rafaelromao/reactiveservices-messagebus-rabbitmq)
+
 ## ReactiveServices.MessageBus.RabbitMQ
 
 ReactiveServices.MessageBus.RabbitMQ is a "RabbitMQ" implementation of the Reac.MessageBus abstraction.
-
-### Dependencies
-
-This package depends on the following packages:
-
-- **ReactiveServices.MessageBus**: Abstraction for all message bus client implementations for ReactiveServices.
 
 ## License
 

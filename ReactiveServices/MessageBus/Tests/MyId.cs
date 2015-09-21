@@ -1,4 +1,4 @@
-﻿namespace ReactiveServices.MessageBus.Tests
+﻿namespace ReactiveServices.MessageBus.RabbitMQ.Tests
 {
     class MyId : Id<MyId>
     {

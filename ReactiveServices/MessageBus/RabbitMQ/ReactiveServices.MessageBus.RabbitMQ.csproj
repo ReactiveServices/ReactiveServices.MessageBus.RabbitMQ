@@ -55,6 +55,26 @@
       <HintPath>..\..\packages\RabbitMQ.Client.3.5.4\lib\net40\RabbitMQ.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ReactiveServices.Authorization, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ReactiveServices.Authorization.0.3.4.0\lib\net451\ReactiveServices.Authorization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.Configuration, Version=0.2.5742.32135, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ReactiveServices.MessageBus.0.3.29\lib\net451\ReactiveServices.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.Extensions, Version=0.2.5742.32099, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ReactiveServices.MessageBus.0.3.29\lib\net451\ReactiveServices.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReactiveServices.MessageBus, Version=0.3.29.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ReactiveServices.MessageBus.0.3.29\lib\net451\ReactiveServices.MessageBus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=2.8.3.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.2.8.3\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Sprache, Version=2.0.0.46, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Sprache.2.0.0.46\lib\portable-net4+netcore45+win8+wp8+sl5+MonoAndroid1+MonoTouch1\Sprache.dll</HintPath>
       <Private>True</Private>
@@ -89,24 +109,6 @@
     <None Include="ReactiveServices.MessageBus.RabbitMQ.nuspec" />
     <None Include="ReactiveServices.MessageBus.RabbitMQ.psproj" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Authorization\ReactiveServices.Authorization.csproj">
-      <Project>{7cd6309f-c689-4111-b58d-88f5ba9f3cc4}</Project>
-      <Name>ReactiveServices.Authorization</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Configuration\ReactiveServices.Configuration.csproj">
-      <Project>{2a8ddafd-0b2b-4798-89b6-ee43afb380f7}</Project>
-      <Name>ReactiveServices.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Extensions\ReactiveServices.Extensions.csproj">
-      <Project>{0da6b5c5-085c-4ea7-b62f-b297b22d1a67}</Project>
-      <Name>ReactiveServices.Extensions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ReactiveServices.MessageBus.csproj">
-      <Project>{e1759601-f341-419e-b978-7b753241c4d9}</Project>
-      <Name>ReactiveServices.MessageBus</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

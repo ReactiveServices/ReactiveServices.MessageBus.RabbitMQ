@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace ReactiveServices.MessageBus.Tests
+namespace ReactiveServices.MessageBus.RabbitMQ.Tests
 {
     [DataContract]
     public class AMessage : Message
