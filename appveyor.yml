@@ -18,6 +18,7 @@ environment:
 test:
   categories:
     except:
+      - stable
       - failing
       - unstable
       - slow
