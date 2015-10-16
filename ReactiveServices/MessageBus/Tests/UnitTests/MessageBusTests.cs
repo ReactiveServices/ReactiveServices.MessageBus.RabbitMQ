@@ -486,7 +486,7 @@ namespace ReactiveServices.MessageBus.RabbitMQ.Tests.UnitTests
         }
 
         [Test]
-        [Category("stable")]
+        [Category("unstable")]
         [Category("fast")]
         public void TestDisposeAfterStartRespondingTo()
         {
@@ -801,7 +801,7 @@ namespace ReactiveServices.MessageBus.RabbitMQ.Tests.UnitTests
         }
 
         [Test]
-        [Category("stable")]
+        [Category("unstable")]
         [Category("slow")]
         public void TestAutoConnectBetweenRequests()
         {
@@ -842,7 +842,7 @@ namespace ReactiveServices.MessageBus.RabbitMQ.Tests.UnitTests
         }
 
         [Test]
-        [Category("stable")]
+        [Category("unstable")]
         [Category("fast")]
         public void TestAutoConnectAfterStartRespondingTo()
         {

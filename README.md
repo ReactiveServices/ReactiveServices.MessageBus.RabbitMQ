@@ -8,7 +8,7 @@ See [this link](http://reactiveservices.github.io) for an overview about the fra
 
 ## ReactiveServices.MessageBus.RabbitMQ
 
-ReactiveServices.MessageBus.RabbitMQ is a "RabbitMQ" implementation of the Reac.MessageBus abstraction.
+ReactiveServices.MessageBus.RabbitMQ is a "RabbitMQ" implementation of the ReactiveServices.MessageBus abstraction.
 
 ## License
 
