@@ -191,9 +191,14 @@ namespace ReactiveServices.MessageBus.RabbitMQ
 
                 return (name == queueName);
             }
-            catch
+            catch (WebException)
             {
                 return false;
+            }
+            catch (Exception e)
+            {
+                Log.Error(e, "Error trying to check if queue exists {0}!", queueName);
+                throw;
             }
         }
 

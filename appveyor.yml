@@ -5,7 +5,7 @@ cache: ReactiveServices/packages
 before_build:
 - nuget restore ReactiveServices/ReactiveServices.MessageBus.RabbitMQ.sln
 after_build:
-- nuget pack ReactiveServices/MessageBus/RabbitMQ/ReactiveServices.MessageBus.RabbitMQ.csproj -IncludeReferencedProjects -Properties Configuration=Release -Properties Platform=AnyCPU
+- nuget pack ReactiveServices/MessageBus/RabbitMQ/ReactiveServices.MessageBus.RabbitMQ.csproj -Symbols -IncludeReferencedProjects -Properties Configuration=Release -Properties Platform=AnyCPU
 build:
   project: ReactiveServices/ReactiveServices.MessageBus.RabbitMQ.sln
   verbosity: minimal
@@ -35,4 +35,4 @@ deploy:
 - provider: NuGet
   api_key:
     secure: f16K1osClAxbT+GmqxPPFj//CRk7rOFm4XtRVJkGTqnvfQwR30LPgTidxUSzRLyd
-  skip_symbols: true
+  skip_symbols: false
